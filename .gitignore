@@ -113,3 +113,4 @@ ZENODO/CHANGED_PAR/ALA/TRAJ/LJ/m005/ala_3_md.pdb
 ZENODO/CHANGED_PAR/ALA/TRAJ/LJ/m005/ala_3_md.xtc
 ZENODO/MDP/md.mdp
 data/traj.npy
+no_solv_traj/no_solv.xtc

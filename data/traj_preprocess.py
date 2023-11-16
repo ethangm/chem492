@@ -14,7 +14,11 @@ def xtc_to_numpy(xtc_file: str, pdb_file: str) -> list:
     # or leave all in, but still sort residues?
 
     w_solv = np.array(t.xyz) # ?
-    n_solv = np.array(t.remove_solvent().xyz)
+    t_no_solv = t.remove_solvent()
+    #t_no_solv.save_xtc("/home/ethangm2/chem492/no_solv_traj/no_solv.xtc")
+    
+
+    n_solv = np.array(t_no_solv.xyz)
     w_top = t.top.to_dataframe()[0]
     n_top = t.remove_solvent().top.to_dataframe()[0]
 
@@ -54,11 +58,11 @@ if __name__ == "__main__":
     arr = "traj.npy"
 
     #inspect(xtc, pdb)
-    split_numpy(arr, 7)
+    #split_numpy(arr, 7)
 
     '''
     w_solv, n_solv, w_top, n_top = xtc_to_numpy(xtc, pdb)
-
+    
     print(w_solv.shape)
     print(w_solv[:10])
     print(n_solv.shape)
